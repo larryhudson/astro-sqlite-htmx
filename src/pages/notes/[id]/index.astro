@@ -1,0 +1,16 @@
+---
+import {getRecordById, deleteRecordById, updateRecord} from "@src/utils/db";
+
+import Layout from "@src/components/Layout.astro";
+import Dump from "@src/components/Dump.astro";
+import Note from "@src/components/Note.astro";
+const {id} = Astro.params;
+
+const note = getRecordById('notes', id);
+---
+
+<Layout>
+
+	<Note {note} />	
+
+</Layout>

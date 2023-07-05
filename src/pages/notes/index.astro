@@ -1,0 +1,12 @@
+---
+import Layout from "@src/components/Layout.astro";
+import NotesList from "@src/components/NotesList.astro";
+
+import {executeQuery} from "@src/utils/db";
+
+const notes = executeQuery('notes');
+---
+
+<Layout title="Notes">
+	<NotesList {notes} />
+</Layout>
